@@ -1,0 +1,96 @@
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: rgb(231, 231, 231);
+}
+
+header {
+  height: 56px;
+}
+
+.active {
+  font-weight: bold;
+}
+
+section,
+footer > div {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  border-radius: 0.25rem !important;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+  scroll-margin-top: 70px;
+}
+
+.cover {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.cover h2 {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1rem 0;
+}
+
+.cover img {
+  width: 100%;
+}
+
+article {
+  padding-top: 1rem;
+}
+article img {
+  width: 100%;
+}
+
+article.double *:nth-child(2n + 1) {
+  width: 48%;
+  display: inline-block;
+}
+
+article.double *:nth-child(2n) {
+  width: 48%;
+  display: block;
+  float: right;
+}
+
+@media only screen and (max-width: 1200px) {
+  article.double *:nth-child(2n + 1),
+  article.double *:nth-child(2n) {
+    width: 100%;
+  }
+}
+
+footer p {
+  width: 100%;
+}
+
+#go-top {
+  margin: auto;
+  color: black;
+  height: 80px;
+}
+
+#go-top svg {
+  transition: transform 0.2s ease;
+  padding-top: 5px;
+  width: 64px;
+  height: 64px;
+}
+
+#go-top svg:hover {
+  transform: scale(1.1);
+}
