@@ -1,12 +1,13 @@
 var TOP = 56;
 
-/* Scroll menu */
+/* Scroll with right item menu */
 $(window).on("scroll", function (event) {
   var scroll = $(window).scrollTop();
   var sections = [];
   $("*[id^=link-]").each(function (index, element) {
     var id = element.id.slice(5);
     var dest = document.getElementById(id);
+    if (!dest) return;
     sections.push({
       id: id,
       end: dest.offsetTop + dest.offsetHeight,
@@ -15,15 +16,27 @@ $(window).on("scroll", function (event) {
   sections.sort(function (a, b) {
     return a.end - b.end;
   });
-  console.log(sections);
-  sections.every(function (div) {
-    if (scroll + TOP < div.end) {
-      $(".active").removeClass("active");
-      $("#link-" + div.id).addClass("active");
-      history.pushState(null, null, "index.html#" + div.id);
+  var id = null;
+
+  $(".active").removeClass("active");
+  sections.every(function (part) {
+    if (scroll + TOP < part.end) {
+      id = part.id;
       return false;
     } else {
       return true;
     }
   });
+  if (id === null && sections.length > 0) {
+    id = sections[0].id;
+  }
+  if (id != null) {
+    $("#link-" + id).addClass("active");
+    history.pushState(null, null, "index.html#" + id);
+  }
+});
+
+/* Close menu on click */
+$(".navbar-nav>li>a").on("click", function () {
+  $(".navbar-collapse").collapse("hide");
 });

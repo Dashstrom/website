@@ -8,7 +8,11 @@ body {
 }
 
 header {
-  height: 56px;
+  height: 0;
+}
+
+img {
+  margin-bottom: 0.5rem;
 }
 
 .active {
@@ -25,6 +29,15 @@ footer > div {
   padding: 1rem;
   background-color: rgb(255, 255, 255);
   scroll-margin-top: 70px;
+}
+
+section:first-child {
+  margin: 71px 0 0 0 !important;
+}
+
+
+section:not(:first-child), footer > div {
+  margin: 15px 0 0 0 !important;
 }
 
 .cover {
@@ -94,3 +107,18 @@ footer p {
 #go-top svg:hover {
   transform: scale(1.1);
 }
+
+a.icon, a.icon:visited {
+  text-decoration: none;
+}
+
+a.icon img {
+  transition: transform 0.2s ease;
+  height: 96px;
+  margin: 0.25rem;
+}
+
+a.icon img:hover {
+  transform: scale(1.05);
+}
+
