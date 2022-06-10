@@ -11,14 +11,7 @@ header {
   height: 0;
 }
 
-img {
-  margin-bottom: 0.5rem;
-}
-
-.active {
-  font-weight: bold;
-}
-
+/* Section CSS */
 section,
 footer > div {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
@@ -35,11 +28,12 @@ section:first-child {
   margin: 71px 0 0 0 !important;
 }
 
-
-section:not(:first-child), footer > div {
+section:not(:first-child),
+footer > div {
   margin: 15px 0 0 0 !important;
 }
 
+/* Cover CSS */
 .cover {
   width: 100%;
   overflow: hidden;
@@ -55,97 +49,58 @@ section:not(:first-child), footer > div {
   text-align: center;
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
-  padding: 1rem 0;
+  padding: 0.5rem 0;
+  font-size: 32px;
+}
+
+@media only screen and (max-width: 768px) {
+  .cover h2 {
+    font-size: 3.5vw;
+  }
 }
 
 .cover img {
   width: 100%;
 }
 
-article {
-  padding-top: 1rem;
+/* Content CSS */
+section figure {
+  width: 100%;
+  margin: 20px 0 0 0;
 }
 
-article p {
+section figure:nth-child(n + 3) {
+  border-top: 1px solid black;
+  padding-top: 20px;
+}
+
+section figure img,
+section figure video {
+  width: 500px;
+  margin: auto;
+  display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  section figure img,
+  section figure video {
+    width: 80%;
+  }
+}
+
+section figure figcaption {
+  font-family: "Permanent Marker", cursive;
   text-align: center;
+  font-size: 24px;
 }
 
-article img, article video {
-  width: 100%;
-}
-
-article.double *:nth-child(2n + 1) {
-  width: 48%;
-  display: inline-block;
-}
-
-article.double-l *:nth-child(2n + 1) {
-  width: 23%;
-  display: inline-block;
-}
-
-article.double-r *:nth-child(2n + 1) {
-  width: 73%;
-  display: inline-block;
-}
-
-article.double *:nth-child(2n) {
-  width: 48%;
-  display: block;
-  float: right;
-}
-
-article.double-l *:nth-child(2n) {
-  width: 73%;
-  display: block;
-  float: right;
-}
-
-article.double-r *:nth-child(2n) {
-  width: 23%;
-  display: block;
-  float: right;
-}
-
-article.double p, article.double-r p, article.double-l p {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 48px;
-}
-
-
-article p, article img, article {
-  margin: 0;
-}
-
-article {
-  background-color: rgb(219, 219, 219);
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  display: block;
-}
-
-
-@media only screen and (max-width: 1200px) {
-  article.double *:nth-child(2n + 1),
-  article.double *:nth-child(2n) {
-    width: 100%;
-  }
-  article.double-l *:nth-child(2n + 1),
-  article.double-l *:nth-child(2n) {
-    width: 100%;
-  }
-  article.double-r *:nth-child(2n + 1),
-  article.double-r *:nth-child(2n) {
-    width: 100%;
+@media only screen and (max-width: 768px) {
+  section figure figcaption {
+    font-size: 4vw;
   }
 }
 
-footer p {
-  width: 100%;
-}
-
+/* Arrow CSS */
 #go-top {
   margin: auto;
   color: black;
@@ -163,7 +118,9 @@ footer p {
   transform: scale(1.1);
 }
 
-a.icon, a.icon:visited {
+/* Logo CSS */
+a.icon,
+a.icon:visited {
   text-decoration: none;
 }
 
@@ -177,6 +134,10 @@ a.icon img:hover {
   transform: scale(1.05);
 }
 
+.active {
+  font-weight: bold;
+}
+
 /* The progress container (grey background) */
 .progress-container {
   display: block;
@@ -188,6 +149,6 @@ a.icon img:hover {
 /* The progress bar (scroll indicator) */
 .progress-bar {
   height: 8px;
-  background: #04AA6D;
+  background: #04aa6d;
   width: 0%;
 }
