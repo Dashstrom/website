@@ -65,12 +65,27 @@ section:not(:first-child), footer > div {
 article {
   padding-top: 1rem;
 }
-article img {
+
+article p {
+  text-align: center;
+}
+
+article img, article video {
   width: 100%;
 }
 
 article.double *:nth-child(2n + 1) {
   width: 48%;
+  display: inline-block;
+}
+
+article.double-l *:nth-child(2n + 1) {
+  width: 23%;
+  display: inline-block;
+}
+
+article.double-r *:nth-child(2n + 1) {
+  width: 73%;
   display: inline-block;
 }
 
@@ -80,9 +95,49 @@ article.double *:nth-child(2n) {
   float: right;
 }
 
+article.double-l *:nth-child(2n) {
+  width: 73%;
+  display: block;
+  float: right;
+}
+
+article.double-r *:nth-child(2n) {
+  width: 23%;
+  display: block;
+  float: right;
+}
+
+article.double p, article.double-r p, article.double-l p {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 48px;
+}
+
+
+article p, article img, article {
+  margin: 0;
+}
+
+article {
+  background-color: rgb(219, 219, 219);
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  display: block;
+}
+
+
 @media only screen and (max-width: 1200px) {
   article.double *:nth-child(2n + 1),
   article.double *:nth-child(2n) {
+    width: 100%;
+  }
+  article.double-l *:nth-child(2n + 1),
+  article.double-l *:nth-child(2n) {
+    width: 100%;
+  }
+  article.double-r *:nth-child(2n + 1),
+  article.double-r *:nth-child(2n) {
     width: 100%;
   }
 }
@@ -122,3 +177,17 @@ a.icon img:hover {
   transform: scale(1.05);
 }
 
+/* The progress container (grey background) */
+.progress-container {
+  display: block;
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: #04AA6D;
+  width: 0%;
+}

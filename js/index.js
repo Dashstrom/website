@@ -1,5 +1,7 @@
 var TOP = 56;
 
+var progressBar = document.getElementById("progress");
+
 /* Scroll with right item menu */
 $(window).on("scroll", function (event) {
   var scroll = $(window).scrollTop();
@@ -34,9 +36,16 @@ $(window).on("scroll", function (event) {
     $("#link-" + id).addClass("active");
     history.pushState(null, null, "index.html#" + id);
   }
+
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  progressBar.style.width = scrolled + "%";
+  
 });
 
 /* Close menu on click */
 $(".navbar-nav>li>a").on("click", function () {
   $(".navbar-collapse").collapse("hide");
 });
+
